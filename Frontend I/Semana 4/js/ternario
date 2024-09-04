@@ -1,0 +1,10 @@
+const n1 = 3;
+const n2 = 7;
+
+const suma = n1 + n2;
+
+const multi = n1 * n2;
+
+const operacion = n1 > n2 ? suma : multi;
+
+console.log(operacion);
