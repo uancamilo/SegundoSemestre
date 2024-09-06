@@ -63,7 +63,7 @@ while (true) {
 		continue;
 	}
 
-	break; // Salir del bucle si todos los valores son correctos
+	break;
 }
 
 if (cantidadAdultos > 4 && cantidadNinios > 2) {
@@ -74,8 +74,35 @@ if (cantidadAdultos > 4 && cantidadNinios > 2) {
 			cantidadNinios * (destino[seleccionDestino - 1].Precio * 0.6);
 		const desccuentoAdultos = totalAdultos * 0.2;
 		const descuentoNinios = totalNinios * 0.2;
-		console.log(desccuentoAdultos);
-		console.log(descuentoNinios);
+		const adultosConDescuento = totalAdultos - desccuentoAdultos;
+		const niniosConDescuento = totalNinios - descuentoNinios;
+		console.log(`
+			---------------------------------------------
+						RESUMEN DE VIAJES
+			---------------------------------------------
+
+			Nombre del cliente: ${nombreCliente}
+
+			Cantidad de adultos: ${cantidadAdultos}
+			Cantidad de niños:  ${cantidadNinios}
+			Cantidad de pasajeros (adultos + niños): $ ${cantidadAdultos + cantidadNinios}
+			Viajan a: ${destino[seleccionDestino - 1].Nombre}
+			---------------------------------------------
+
+			Detalle del precio del viaje:
+
+			---------------------------------------------
+
+			- Descuento adultos: $ ${desccuentoAdultos}
+			- Descuento niños: $ ${descuentoNinios}
+
+			- Valor adultos: $${adultosConDescuento}
+			- Valor niños: $${niniosConDescuento}
+			- Total del viaje: $${niniosConDescuento + adultosConDescuento}
+
+			---------------------------------------------
+
+		`);
 	}
 } else {
 	console.log("Sin Descuento");
@@ -83,7 +110,32 @@ if (cantidadAdultos > 4 && cantidadNinios > 2) {
 		const totalAdultos = cantidadAdultos * destino[seleccionDestino - 1].Precio;
 		const totalNinios =
 			cantidadNinios * (destino[seleccionDestino - 1].Precio * 0.6);
-		console.log(totalAdultos);
-		console.log(totalNinios);
+		console.log(`
+			---------------------------------------------
+						RESUMEN DE VIAJES
+			---------------------------------------------
+
+			Nombre del cliente: ${nombreCliente}
+
+			Cantidad de adultos: ${cantidadAdultos}
+			Cantidad de niños:  ${cantidadNinios}
+			Cantidad de pasajeros (adultos + niños): $ ${cantidadAdultos + cantidadNinios}
+			Viajan a: ${destino[seleccionDestino - 1].Nombre}
+			---------------------------------------------
+
+					DETALLE DEL PRECIO DEL VIAJE
+
+			---------------------------------------------
+
+			- Descuento adultos: $ 0
+			- Descuento niños: $ 0
+
+			- Valor adultos: $${totalAdultos}
+			- Valor niños: $${totalNinios}
+			- Total del viaje: $${totalAdultos + totalNinios}
+
+			---------------------------------------------
+
+		`);
 	}
 }
