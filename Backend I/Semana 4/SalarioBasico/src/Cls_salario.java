@@ -8,5 +8,6 @@ public class Cls_salario {
         } else {
             deduccion = (val_salario_minimo * 9) / 100;
         }
+        return deduccion;
     }
 }
